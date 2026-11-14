@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════════════
+   Employee Management System — Global Design System
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Color palette */
+  --bg-primary:     #0d0f1a;
+  --bg-secondary:   #131627;
+  --bg-card:        #1a1d2e;
+  --bg-elevated:    #1f2340;
+  --bg-glass:       rgba(26, 29, 46, 0.8);
+
+  --accent:         #7c5cfc;
+  --accent-light:   #9b80ff;
+  --accent-glow:    rgba(124, 92, 252, 0.3);
+  --accent-bg:      rgba(124, 92, 252, 0.12);
+
+  --teal:           #00d4aa;
+  --teal-bg:        rgba(0, 212, 170, 0.12);
+
+  --amber:          #f59e0b;
+  --amber-bg:       rgba(245, 158, 11, 0.12);
+
+  --rose:           #f43f5e;
+  --rose-bg:        rgba(244, 63, 94, 0.12);
+
+  --emerald:        #10b981;
+  --emerald-bg:     rgba(16, 185, 129, 0.12);
+
+  /* Text */
+  --text-primary:   #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+
+  /* Borders */
+  --border:         rgba(255, 255, 255, 0.07);
+  --border-hover:   rgba(124, 92, 252, 0.4);
+
+  /* Shadows */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:      0 8px 32px rgba(0,0,0,0.5);
+  --shadow-glow:    0 0 24px rgba(124, 92, 252, 0.25);
+
+  /* Typography */
+  --font:           'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      16px;
+  --radius-xl:      24px;
+
+  /* Transitions */
+  --transition:     0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Animated gradient background */
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 92, 252, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(0, 212, 170, 0.06) 0%, transparent 50%);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+p { color: var(--text-secondary); }
+
+a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--accent); }
+
+/* ── Utility animations ─────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: scale(0.95) translateY(-16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
